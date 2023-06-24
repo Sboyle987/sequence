@@ -17,43 +17,43 @@ This is a web application that simulates the game of Sequence. It consists of a 
 
 2. Backend Setup
 
-Create a virtual environment:
+   1. Create a virtual environment:
 
-    python -m venv venv
+        python -m venv venv
 
-Activate the virtual environment:
+   2. Activate the virtual environment:
 
-For Windows:
+        For Windows:
 
-    venv\Scripts\activate
+            venv\Scripts\activate
 
-For macOS/Linux:
+        For macOS/Linux:
 
-    source venv/bin/activate
+            source venv/bin/activate
 
-Install the backend dependencies:
+    3. Install the backend dependencies:
 
-    pip install -r backend/requirements.txt
+        pip install -r backend/requirements.txt
 
-Start the backend server:
+    4. Start the backend server:
 
-    python backend/app.py
+        python backend/app.py
 
 3. Frontend Setup
 
-Install the frontend dependencies:
+    1. Install the frontend dependencies:
 
-    npm install
+        npm install
 
-Start the frontend server:
+    2. Start the frontend server:
 
-    cd frontend
-    npm start
+        cd frontend
+        npm start
 
-Access the Application
+4. Access the Application
 
-The Sequence Game web application will be accessible at http://localhost:3000 in your web browser.
+    The Sequence Game web application will be accessible at http://localhost:3000 in your web browser.
 
-Contributing
+## Contributing
 Contributions are welcome! If you find any issues or want to enhance the application, feel free to submit a pull request.
 
