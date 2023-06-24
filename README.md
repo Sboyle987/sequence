@@ -45,6 +45,7 @@ npm install
 
 Start the frontend server:
 
+cd frontend
 npm start
 
 Access the Application
