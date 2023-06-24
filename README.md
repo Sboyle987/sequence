@@ -23,11 +23,11 @@ This is a web application that simulates the game of Sequence. It consists of a 
         python -m venv venv
         ```
    2. Activate the virtual environment:
-
         For Windows:
             ```
             venv\Scripts\activate
             ```
+    
         For macOS/Linux:
             ```
             source venv/bin/activate
