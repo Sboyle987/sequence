@@ -1,0 +1,58 @@
+.App {
+  text-align: center;
+  margin-top: 50px;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(10, 60px);
+  grid-template-rows: repeat(10, 60px);
+  gap: 5px;
+  max-width: fit-content;
+  margin: auto;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border: 1px solid #000;
+  font-size: 16px;
+}
+
+.selected {
+  background-color: #e6e6e6;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+}
+
+p {
+  margin-top: 20px;
+}
+
+/* Media Queries for iPhone 11 */
+@media (max-width: 375px) {
+  .game-board {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    overflow: auto;
+    /* Enable horizontal scrolling */
+  }
+
+  .cell {
+    height: 1rem;
+    font-size: 1.2rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+  }
+}
