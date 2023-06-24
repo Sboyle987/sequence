@@ -13,40 +13,50 @@ This is a web application that simulates the game of Sequence. It consists of a 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/sequence-game.git
-   cd sequence-game
+   git clone git@github.com:your-username/sequence.git
+   cd sequence
 
 2. Backend Setup
 
 Create a virtual environment:
-python -m venv venv
+
+    ```bash
+    python -m venv venv
 
 Activate the virtual environment:
 
 For Windows:
 
-venv\Scripts\activate
+    ```bash
+    venv\Scripts\activate
+
 For macOS/Linux:
-source venv/bin/activate
+
+    ```bash
+    source venv/bin/activate
 
 Install the backend dependencies:
 
-pip install -r backend/requirements.txt
+    ```bash
+    pip install -r backend/requirements.txt
 
 Start the backend server:
 
-python backend/app.py
+    ```bash
+    python backend/app.py
 
 3. Frontend Setup
 
 Install the frontend dependencies:
 
-npm install
+    ```bash
+    npm install
 
 Start the frontend server:
 
-cd frontend
-npm start
+    ```bash
+    cd frontend
+    npm start
 
 Access the Application
 
