@@ -52,7 +52,6 @@ class GameBoard extends Component {
             if (this.state.board.includes(card)) {
                 let index = this.state.board.indexOf(card, 0)
                 if (index > -1) {
-                    console.log(index)
                     this.state.board.splice(index, 1);
                     this.state.player1Tokens.push(card)
                 }
@@ -62,7 +61,7 @@ class GameBoard extends Component {
                 console.log("invalid move")
             }
             console.log(this.state.board)
-            console.log(this.state.player1Tokens.includes(card))
+            console.log(`Player 1 selected tokens: ${this.state.player1Tokens.includes(card)}`)
         } catch (error) {
             // Handle any errors that occurred during the API request
             console.error(error);
@@ -75,6 +74,7 @@ class GameBoard extends Component {
                 <div className="game-board">
                     {cards.map((card) => (
                         <div
+                            //This doesn't work TODO: Break out card into own class
                             className={`cell ${this.state.player1Tokens.includes(card) ? 'selected' : ''}`}
                             // className={'cell'}
                             key={card}
