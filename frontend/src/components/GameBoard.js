@@ -21,34 +21,48 @@ class GameBoard extends Component {
         super(props);
         this.state = {
             player1: 1,
+            player1Tokens: [],
             player2: 2,
             currentPlayer: null,
-            board: [],
+            board: cards,
             gameOver: false
         };
         // this.play = this.play.bind(this);
     }
+    // Clear board of tokens
     initBoard() {
-        let board = [];
-        for (let card = 0; card < cards.length; card++) {
-            let cell = cards[card];
-            board.push(cell);
-        }
-
+        //Copy of initial board, this is probably the wrong way to do this
+        let board = Array.from(cards);
         this.setState({
             board,
             currentPlayer: this.state.player1,
             gameOver: false
         });
+
+        console.log(board.length)
     };
     // Function to handle making a move
-    handleMove = async () => {
+    handleMove = async (card) => {
         // Implement the logic to send the move data to the backend
         // ...
         try {
             const response = await axios.post('http://localhost:5000/api/move', {});
             // Process the response or update the UI based on the backend's response
             console.log(response.data);
+            if (this.state.board.includes(card)) {
+                let index = this.state.board.indexOf(card, 0)
+                if (index > -1) {
+                    console.log(index)
+                    this.state.board.splice(index, 1);
+                    this.state.player1Tokens.push(card)
+                }
+                console.log("valid move")
+            }
+            else {
+                console.log("invalid move")
+            }
+            console.log(this.state.board)
+            console.log(this.state.player1Tokens.includes(card))
         } catch (error) {
             // Handle any errors that occurred during the API request
             console.error(error);
@@ -56,16 +70,20 @@ class GameBoard extends Component {
     };
     render() {
         return (
-            <div className="game-board">
-                {cards.map((card) => (
-                    <div
-                        className={`cell`}
-                        key={card}
-                        onClick={this.handleMove}
-                    >
-                        {card}
-                    </div>
-                ))}
+            <div>
+                <div className="button" onClick={() => { this.initBoard() }}>New Game</div>
+                <div className="game-board">
+                    {cards.map((card) => (
+                        <div
+                            className={`cell ${this.state.player1Tokens.includes(card) ? 'selected' : ''}`}
+                            // className={'cell'}
+                            key={card}
+                            onClick={() => this.handleMove(card)}
+                        >
+                            {card}
+                        </div>
+                    ))}
+                </div>
             </div>);
     }
 }
